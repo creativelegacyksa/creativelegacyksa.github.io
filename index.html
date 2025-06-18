@@ -10,211 +10,94 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
       font-family: 'Montserrat', sans-serif;
-      background-color: #0f0f0f;
-      color: #ffffff;
-      line-height: 1.6;
-      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
     }
-
     header {
-      background-color: #000000;
-      padding: 2rem 1rem 3rem;
       text-align: center;
-      border-bottom: 2px solid #f4c542;
-      animation: fadeInTop 1s ease-in-out;
+      padding: 2rem 1rem 1rem;
     }
-
     header img {
-      height: 240px;
-      margin-bottom: 1rem;
-      animation: fadeIn 1.2s ease-in-out;
+      width: 180px;
+      animation: fadeIn 2s ease-in-out;
     }
-
     header p {
-      font-size: 1.1rem;
-      color: #ccc;
-      animation: fadeInText 2s ease-in-out infinite alternate;
+      font-size: 1.5rem;
+      font-weight: 600;
+      animation: pulse 2s infinite;
     }
-
-    @keyframes fadeInText {
-      0% { opacity: 0; transform: translateY(10px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
     nav {
       display: flex;
       justify-content: center;
       gap: 2rem;
-      background-color: #1a1a1a;
+      background-color: #000;
       padding: 1rem;
-      animation: fadeIn 2s ease-in-out;
     }
-
     nav a {
-      color: #ffffff;
+      color: white;
       text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease-in-out;
+      font-weight: 600;
     }
-
-    nav a:hover {
-      color: #f4c542;
-    }
-
     section {
-      padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: slideUp 1s forwards;
+      padding: 2rem;
     }
-
-    section:nth-of-type(2) { animation-delay: 0.2s; }
-    section:nth-of-type(3) { animation-delay: 0.4s; }
-    section:nth-of-type(4) { animation-delay: 0.6s; }
-    section:nth-of-type(5) { animation-delay: 0.8s; }
-
-    section h2 {
-      color: #f4c542;
+    h2 {
+      text-align: center;
       font-size: 2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
     }
-
-    .cta {
-      margin-top: 1rem;
-      display: inline-block;
-      background: #f4c542;
-      color: #000;
-      padding: 0.75rem 1.5rem;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s, transform 0.3s;
-    }
-
-    .cta:hover {
-      background: #ffda68;
-      transform: scale(1.05);
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .gallery iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
-      border-radius: 8px;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .project-card {
-      background: #1a1a1a;
-      padding: 1rem;
-      border-radius: 8px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 12px rgba(244, 197, 66, 0.3);
-    }
-
-    .project-card img {
-      width: 100%;
-      border-radius: 5px;
-      margin-bottom: 0.5rem;
-    }
-
-    .project-card h3 {
-      color: #f4c542;
-      margin-bottom: 0.25rem;
-    }
-
-    .project-card p {
-      color: #bbb;
-      font-size: 0.95rem;
-    }
-
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2rem;
-      margin-top: 2rem;
+      animation: fadeInUp 1s ease-in-out;
     }
-
     .service-card {
-      background: #1a1a1a;
-      border-radius: 10px;
-      padding: 2rem 1rem;
+      background-color: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       text-align: center;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .service-card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
-
     .service-card i {
-      font-size: 2rem;
-      color: #f4c542;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
+      color: #000;
+      animation: bounce 2s infinite;
     }
-
     .service-card h3 {
-      font-size: 1.2rem;
-      color: #fff;
-      margin-bottom: 0.5rem;
+      margin: 0.5rem 0;
+      font-size: 1.3rem;
     }
-
     .service-card p {
       font-size: 0.95rem;
-      color: #bbb;
+      color: #555;
     }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background-color: #111111;
-      color: #999;
-      font-size: 0.9rem;
-      animation: fadeIn 3s ease-in-out;
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
     }
-
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-
-    @keyframes fadeInTop {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
     }
   </style>
 </head>
@@ -233,82 +116,47 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>
-      We are a Saudi-based cinematic visual production company specialized in storytelling through photography,
-      videography, interviews, and short films. We help brands, people, and places tell stories that resonate.
-    </p>
-  </section>
-
-  <section id="work">
-    <h2>Our Work</h2>
-    <div class="gallery">
-      <iframe src="https://www.instagram.com/reel/DFSbD3sinBC/embed"></iframe>
-      <iframe src="https://www.instagram.com/reel/C97FZY7i0oy/embed"></iframe>
-      <iframe src="https://www.instagram.com/reel/C9mPDNdCFJx/embed"></iframe>
-      <iframe src="https://www.instagram.com/reel/C9UgkxRCP9w/embed"></iframe>
-    </div>
-    <a class="cta" href="https://www.instagram.com/creativelegacyksa" target="_blank">Follow on Instagram</a>
-  </section>
-
-  <section id="projects">
-    <h2>Featured Projects</h2>
-    <div class="projects">
-      <div class="project-card">
-        <img src="https://i.imgur.com/YJu6jD5.jpg" alt="Hospital Promo">
-        <h3>Hospital Cinematic Promo</h3>
-        <p>A moving, story-driven piece shot on location with dramatic lighting.</p>
-      </div>
-      <div class="project-card">
-        <img src="https://i.imgur.com/J5kGJk9.jpg" alt="Grilled Chicken Ad">
-        <h3>Restaurant Ad - Grilled Chicken</h3>
-        <p>High-energy visuals with charcoal flames and slow-motion captures.</p>
-      </div>
-    </div>
-  </section>
-
   <section id="services">
     <h2>What We Do</h2>
     <div class="services-grid">
       <div class="service-card">
+        <i class="fas fa-camera"></i>
+        <h3>Photography</h3>
+        <p>Capturing timeless moments with precision and artistry.</p>
+      </div>
+      <div class="service-card">
         <i class="fas fa-video"></i>
-        <h3>Commercial Production</h3>
-        <p>Cinematic ads tailored to elevate your brand.</p>
+        <h3>Event Coverage</h3>
+        <p>Full video & photo coverage for events, big or small.</p>
       </div>
       <div class="service-card">
-        <i class="fas fa-calendar-alt"></i>
-        <h3>Event Videography</h3>
-        <p>Capturing moments from weddings, launches, and live shows.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-user-friends"></i>
-        <h3>Interviews</h3>
-        <p>Authentic testimonials and branded storytelling.</p>
+        <i class="fas fa-microphone"></i>
+        <h3>Interview Shooting</h3>
+        <p>Professional setups for cinematic interviews and testimonies.</p>
       </div>
       <div class="service-card">
         <i class="fas fa-film"></i>
-        <h3>Short Films</h3>
-        <p>Dramatic narratives with high production value.</p>
+        <h3>Documentaries & Short Films</h3>
+        <p>Deep storytelling through visual narratives.</p>
       </div>
       <div class="service-card">
-        <i class="fas fa-mobile-alt"></i>
-        <h3>Social Reels</h3>
-        <p>Quick, engaging content crafted for online platforms.</p>
+        <i class="fas fa-utensils"></i>
+        <h3>Restaurant Commercials</h3>
+        <p>Deliciously visual ads tailored for food & hospitality.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-box"></i>
+        <h3>Product Shooting</h3>
+        <p>High-quality product photography and stylized setups.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-building"></i>
+        <h3>Real Estate</h3>
+        <p>Professional visuals to showcase property features and value.</p>
       </div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email us at <a href="mailto:creativelegacyksa@gmail.com" style="color:#f4c542; text-decoration: underline;">creativelegacyksa@gmail.com</a></p>
-    <p>or click below to chat directly on WhatsApp:</p>
-    <a class="cta" href="https://wa.me/966547883338" target="_blank">Message Us</a>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Creative Legacy. All rights reserved.</p>
-  </footer>
 </body>
 
 </html>
