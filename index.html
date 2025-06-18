@@ -1,12 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Creative Legacy</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f0f0f;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #000000;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 2px solid #f4c542;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #f4c542;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background-color: #1a1a1a;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #f4c542;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      color: #f4c542;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #111111;
+      color: #999;
+    }
+
+    .cta {
+      margin-top: 1rem;
+      display: inline-block;
+      background: #f4c542;
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
 </head>
+
 <body>
-  <h1 style="text-align: center; margin-top: 100px;">Welcome to Creative Legacy</h1>
-  <p style="text-align: center;">Cinematic visuals. Lasting impact.</p>
+  <header>
+    <h1>Creative Legacy</h1>
+    <p>Cinematic visuals. Lasting impact.</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      We are a Saudi-based cinematic visual production company specialized in storytelling through photography,
+      videography, interviews, and short films. We help brands, people, and places tell stories that resonate.
+    </p>
+  </section>
+
+  <section id="work">
+    <h2>Our Work</h2>
+    <p>Check out our projects on Instagram — we let the visuals speak for themselves.</p>
+    <a class="cta" href="https://www.instagram.com/creativelegacyksa" target="_blank">Follow on Instagram</a>
+  </section>
+
+  <section id="services">
+    <h2>What We Do</h2>
+    <ul>
+      <li>Commercial Cinematic Production</li>
+      <li>Event Videography</li>
+      <li>Branded Interviews & Testimonials</li>
+      <li>Short Films & Visual Campaigns</li>
+      <li>Social Media Reels & Edits</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email us at <a href="mailto:creativelegacyksa@gmail.com" style="color:#f4c542;">creativelegacyksa@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Creative Legacy. All rights reserved.</p>
+  </footer>
 </body>
+
 </html>
