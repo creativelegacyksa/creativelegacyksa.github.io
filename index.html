@@ -32,7 +32,7 @@
     }
 
     header img {
-      height: 120px;
+      height: 240px;
       margin-bottom: 1rem;
       animation: fadeIn 1.2s ease-in-out;
     }
@@ -40,7 +40,12 @@
     header p {
       font-size: 1.1rem;
       color: #ccc;
-      animation: fadeIn 1.6s ease-in-out;
+      animation: fadeInText 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes fadeInText {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     nav {
@@ -196,8 +201,8 @@
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
+      header img {
+        height: 180px;
       }
 
       section {
