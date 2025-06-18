@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     * {
       margin: 0;
@@ -77,35 +78,15 @@
       animation: slideUp 1s forwards;
     }
 
-    section:nth-of-type(2) {
-      animation-delay: 0.2s;
-    }
-
-    section:nth-of-type(3) {
-      animation-delay: 0.4s;
-    }
-
-    section:nth-of-type(4) {
-      animation-delay: 0.6s;
-    }
-
-    section:nth-of-type(5) {
-      animation-delay: 0.8s;
-    }
+    section:nth-of-type(2) { animation-delay: 0.2s; }
+    section:nth-of-type(3) { animation-delay: 0.4s; }
+    section:nth-of-type(4) { animation-delay: 0.6s; }
+    section:nth-of-type(5) { animation-delay: 0.8s; }
 
     section h2 {
       color: #f4c542;
       font-size: 2rem;
       margin-bottom: 1rem;
-    }
-
-    section p, section ul {
-      font-size: 1rem;
-      color: #ddd;
-    }
-
-    ul li {
-      margin-bottom: 0.5rem;
     }
 
     .cta {
@@ -174,6 +155,42 @@
       font-size: 0.95rem;
     }
 
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .service-card {
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 2rem 1rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .service-card i {
+      font-size: 2rem;
+      color: #f4c542;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      color: #bbb;
+    }
+
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -197,16 +214,6 @@
       to {
         opacity: 1;
         transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 600px) {
-      header img {
-        height: 180px;
-      }
-
-      section {
-        padding: 2rem 1rem;
       }
     }
   </style>
@@ -263,13 +270,33 @@
 
   <section id="services">
     <h2>What We Do</h2>
-    <ul>
-      <li>Commercial Cinematic Production</li>
-      <li>Event Videography</li>
-      <li>Branded Interviews & Testimonials</li>
-      <li>Short Films & Visual Campaigns</li>
-      <li>Social Media Reels & Edits</li>
-    </ul>
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-video"></i>
+        <h3>Commercial Production</h3>
+        <p>Cinematic ads tailored to elevate your brand.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-calendar-alt"></i>
+        <h3>Event Videography</h3>
+        <p>Capturing moments from weddings, launches, and live shows.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-user-friends"></i>
+        <h3>Interviews</h3>
+        <p>Authentic testimonials and branded storytelling.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-film"></i>
+        <h3>Short Films</h3>
+        <p>Dramatic narratives with high production value.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Social Reels</h3>
+        <p>Quick, engaging content crafted for online platforms.</p>
+      </div>
+    </div>
   </section>
 
   <section id="contact">
