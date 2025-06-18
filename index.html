@@ -5,6 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Creative Legacy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -13,28 +16,37 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Montserrat', sans-serif;
       background-color: #0f0f0f;
       color: #ffffff;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
       background-color: #000000;
-      padding: 2rem;
+      padding: 2rem 1rem 3rem;
       text-align: center;
       border-bottom: 2px solid #f4c542;
+      animation: fadeInTop 1s ease-in-out;
     }
 
     header img {
-      width: 150px;
+      width: 160px;
       margin-bottom: 1rem;
-      background-color: transparent;
+      animation: fadeIn 1.2s ease-in-out;
     }
 
     header h1 {
       font-size: 3rem;
       color: #f4c542;
+      margin-bottom: 0.25rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #ccc;
+      animation: fadeIn 1.6s ease-in-out;
     }
 
     nav {
@@ -43,12 +55,14 @@
       gap: 2rem;
       background-color: #1a1a1a;
       padding: 1rem;
+      animation: fadeIn 2s ease-in-out;
     }
 
     nav a {
       color: #ffffff;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease-in-out;
     }
 
     nav a:hover {
@@ -57,20 +71,42 @@
 
     section {
       padding: 4rem 2rem;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: slideUp 1s forwards;
+    }
+
+    section:nth-of-type(2) {
+      animation-delay: 0.2s;
+    }
+
+    section:nth-of-type(3) {
+      animation-delay: 0.4s;
+    }
+
+    section:nth-of-type(4) {
+      animation-delay: 0.6s;
+    }
+
+    section:nth-of-type(5) {
+      animation-delay: 0.8s;
     }
 
     section h2 {
       color: #f4c542;
+      font-size: 2rem;
       margin-bottom: 1rem;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background-color: #111111;
-      color: #999;
+    section p, section ul {
+      font-size: 1rem;
+      color: #ddd;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
     }
 
     .cta {
@@ -82,13 +118,104 @@
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .cta:hover {
+      background: #ffda68;
+      transform: scale(1.05);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .gallery iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: #1a1a1a;
+      padding: 1rem;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 12px rgba(244, 197, 66, 0.3);
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card h3 {
+      color: #f4c542;
+      margin-bottom: 0.25rem;
+    }
+
+    .project-card p {
+      color: #bbb;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #111111;
+      color: #999;
+      font-size: 0.9rem;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInTop {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 2rem 1rem;
+      }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <img src="https://raw.githubusercontent.com/creativelegacyksa/creativelegacyksa.github.io/main/assets/logo2-transparent.png" alt="Creative Legacy Logo">
+    <img src="https://raw.githubusercontent.com/creativelegacyksa/creativelegacyksa.github.io/main/assets/logo2.png" alt="Creative Legacy Logo">
     <h1>Creative Legacy</h1>
     <p>Cinematic visuals. Lasting impact.</p>
   </header>
@@ -96,6 +223,7 @@
   <nav>
     <a href="#about">About</a>
     <a href="#work">Work</a>
+    <a href="#projects">Projects</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -110,8 +238,29 @@
 
   <section id="work">
     <h2>Our Work</h2>
-    <p>Check out our projects on Instagram — we let the visuals speak for themselves.</p>
+    <div class="gallery">
+      <iframe src="https://www.instagram.com/reel/DFSbD3sinBC/embed"></iframe>
+      <iframe src="https://www.instagram.com/reel/C97FZY7i0oy/embed"></iframe>
+      <iframe src="https://www.instagram.com/reel/C9mPDNdCFJx/embed"></iframe>
+      <iframe src="https://www.instagram.com/reel/C9UgkxRCP9w/embed"></iframe>
+    </div>
     <a class="cta" href="https://www.instagram.com/creativelegacyksa" target="_blank">Follow on Instagram</a>
+  </section>
+
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="https://i.imgur.com/YJu6jD5.jpg" alt="Hospital Promo">
+        <h3>Hospital Cinematic Promo</h3>
+        <p>A moving, story-driven piece shot on location with dramatic lighting.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://i.imgur.com/J5kGJk9.jpg" alt="Grilled Chicken Ad">
+        <h3>Restaurant Ad - Grilled Chicken</h3>
+        <p>High-energy visuals with charcoal flames and slow-motion captures.</p>
+      </div>
+    </div>
   </section>
 
   <section id="services">
@@ -127,7 +276,9 @@
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email us at <a href="mailto:creativelegacyksa@gmail.com" style="color:#f4c542;">creativelegacyksa@gmail.com</a></p>
+    <p>Email us at <a href="mailto:creativelegacyksa@gmail.com" style="color:#f4c542; text-decoration: underline;">creativelegacyksa@gmail.com</a></p>
+    <p>or click below to chat directly on WhatsApp:</p>
+    <a class="cta" href="https://wa.me/966547883338" target="_blank">Message Us</a>
   </section>
 
   <footer>
