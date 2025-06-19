@@ -50,38 +50,6 @@
       font-size: 2rem;
       margin-bottom: 2rem;
     }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      animation: fadeInUp 1s ease-in-out;
-    }
-    .service-card {
-      background-color: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-    .service-card i {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #000;
-      animation: bounce 2s infinite;
-    }
-    .service-card h3 {
-      margin: 0.5rem 0;
-      font-size: 1.3rem;
-    }
-    .service-card p {
-      font-size: 0.95rem;
-      color: #555;
-    }
     .video-wrapper {
       max-width: 600px;
       margin: 1.5rem auto;
@@ -103,22 +71,6 @@
       max-width: 300px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .project-block {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      max-width: 900px;
-      margin: 2rem auto;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .project-block h3 {
-      text-align: center;
-      margin-top: 1rem;
-    }
-    .project-block p {
-      text-align: center;
-      color: #555;
     }
     .service-detail {
       max-width: 900px;
@@ -144,17 +96,9 @@
       50% { opacity: 0.6; transform: scale(1.05); }
       100% { opacity: 1; transform: scale(1); }
     }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
     }
   </style>
 </head>
@@ -165,7 +109,43 @@
     <p>Cinematic visuals. Lasting impact.</p>
   </header>
 
-  <!-- rest of site remains unchanged -->
+  <section>
+    <h2>من نحن</h2>
+    <p style="text-align:center; max-width:800px; margin:0 auto;">
+      Creative Legacy هي شركة إنتاج مرئي تركز على خلق محتوى بصري ملهم واحترافي. نروي القصص من خلال عدسة فنية وإبداعية لنترك أثراً بصريًا يدوم في ذهن جمهورك.
+    </p>
+  </section>
+
+  <section>
+    <h2>What We Do</h2>
+    <div class="service-detail">
+      <h3>Corporate Video</h3>
+      <p>
+        We create cinematic corporate videos that communicate your brand message with clarity, class, and creativity.
+        Whether you're launching a new service, introducing your team, or explaining a process, we tailor each production
+        to reflect your unique identity and goals. From concept development to post-production, we handle it all with professional precision.
+      </p>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/yYeMGBXcr18" title="Corporate Video 1" allowfullscreen></iframe>
+      </div>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/JNVpNneuZlQ" title="Corporate Video 2" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="service-detail">
+      <h3>Photography</h3>
+      <p>
+        From commercial shoots to editorial storytelling, we deliver high-quality photography that captures your brand’s essence.
+        Whether it’s products, people, or spaces, our imagery speaks your message with clarity and artistry.
+      </p>
+      <div class="image-row">
+        <img src="https://raw.githubusercontent.com/creativelegacyksa/creativelegacyksa.github.io/main/DSC02552.jpg" alt="Photo 1">
+        <img src="https://raw.githubusercontent.com/creativelegacyksa/creativelegacyksa.github.io/main/Alshifaa--6.jpg" alt="Photo 2">
+        <img src="https://raw.githubusercontent.com/creativelegacyksa/creativelegacyksa.github.io/main/Sh-16.jpg" alt="Photo 3">
+      </div>
+    </div>
+  </section>
 </body>
 
 </html>
