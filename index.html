@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +22,7 @@
       padding: 2rem 1rem 1rem;
     }
     header img {
-      width: 400px;
+      width: 600px;
       animation: fadeIn 2s ease-in-out;
     }
     header p {
@@ -84,24 +83,12 @@
       color: #555;
     }
     .video-wrapper {
-      max-width: 600px;
-      margin: 1.5rem auto;
+      max-width: 800px;
+      margin: 2rem auto;
     }
     .video-wrapper iframe {
       width: 100%;
-      height: 320px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .image-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    .image-row img {
-      max-width: 300px;
+      height: 450px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
@@ -120,25 +107,6 @@
     .project-block p {
       text-align: center;
       color: #555;
-    }
-    .service-detail {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .service-detail h3 {
-      font-size: 1.7rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    .service-detail p {
-      font-size: 1.05rem;
-      color: #444;
-      line-height: 1.6;
-      text-align: center;
     }
     @keyframes pulseText {
       0% { opacity: 1; transform: scale(1); }
@@ -161,14 +129,96 @@
 </head>
 
 <body>
-  <div class="image-row">
-    <img src="https://drive.google.com/uc?export=view&id=1SQ2RV2V3lM2nMC4IZb88PAXaBB2ZvcLP" alt="Photography Sample 1">
-    <img src="https://drive.google.com/uc?export=view&id=1CDPMLLNzE2o07M-g7vVXOh2AHulmEs6J" alt="Photography Sample 2">
-    <img src="https://drive.google.com/uc?export=view&id=1C1jcGZbg4I_Ocq0T2DG-e1prUxvmBfch" alt="Photography Sample 3">
-    <img src="https://drive.google.com/uc?export=view&id=1NFYvSc27ZJg5AQNXcBaLT569VhsgMsus" alt="Photography Sample 4">
-    <img src="https://drive.google.com/uc?export=view&id=118Er9xBUK9jiWb6U2ld3Px1nlpQNMjal" alt="Photography Sample 5">
-    <img src="https://drive.google.com/uc?export=view&id=1jtr0f1suu9G1n56NHewDUqDOXFS1lYn2" alt="Photography Sample 6">
-  </div>
+  <header>
+    <img src="https://i.postimg.cc/G2Byf3y4/CL-logo-trans.png" alt="Creative Legacy Logo">
+    <p>Cinematic visuals. Lasting impact.</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#projects">Projects</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>Who We Are</h2>
+    <p style="max-width: 800px; margin: auto; text-align: center; font-size: 1.1rem; color: #444;">
+      Creative Legacy is a Saudi-based cinematic visual production company dedicated to bringing powerful stories to life. We specialize in crafting visually compelling narratives through photography, videography, and short films. Whether it's a branded shoot, a corporate documentary, or a social campaign, we turn creative visions into lasting impact.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Corporate Video</h2>
+
+    <div class="project-block">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/yYeMGBXcr18" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <h3>Corporate Cinematic Video</h3>
+      <p>Clean, corporate, and story-driven. Shot with precise lighting and intentional pacing.</p>
+    </div>
+
+    <div class="project-block">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/JNVpNneuZlQ" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <h3>Modern Brand Communication</h3>
+      <p>Storytelling that aligns with brand identity and visual appeal.</p>
+    </div>
+
+  </section>
+
+  <section id="services">
+    <h2>What We Do</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-camera"></i>
+        <h3>Photography</h3>
+        <p>Capturing timeless moments with precision and artistry.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-video"></i>
+        <h3>Event Coverage</h3>
+        <p>Full video & photo coverage for events, big or small.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-microphone"></i>
+        <h3>Interview Shooting</h3>
+        <p>Professional setups for cinematic interviews and testimonies.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-film"></i>
+        <h3>Documentaries & Short Films</h3>
+        <p>Deep storytelling through visual narratives.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-utensils"></i>
+        <h3>Restaurant Commercials</h3>
+        <p>Deliciously visual ads tailored for food & hospitality.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-box"></i>
+        <h3>Product Shooting</h3>
+        <p>High-quality product photography and stylized setups.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-building"></i>
+        <h3>Real Estate</h3>
+        <p>Professional visuals to showcase property features and value.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p style="text-align: center; font-size: 1.1rem;">Email us at <a href="mailto:creativelegacyksa@gmail.com">creativelegacyksa@gmail.com</a></p>
+    <p style="text-align: center;">
+      <a href="https://wa.me/966547888338" target="_blank" style="background: #25D366; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Message Us on WhatsApp</a>
+    </p>
+  </section>
+
 </body>
 
 </html>
