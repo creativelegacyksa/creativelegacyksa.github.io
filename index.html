@@ -22,7 +22,7 @@
       padding: 2rem 1rem 1rem;
     }
     header img {
-      width: 600px;
+      width: 400px;
       animation: fadeIn 2s ease-in-out;
     }
     header p {
@@ -83,12 +83,24 @@
       color: #555;
     }
     .video-wrapper {
-      max-width: 800px;
-      margin: 2rem auto;
+      max-width: 600px;
+      margin: 1.5rem auto;
     }
     .video-wrapper iframe {
       width: 100%;
-      height: 450px;
+      height: 320px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .image-row img {
+      max-width: 300px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
@@ -107,6 +119,25 @@
     .project-block p {
       text-align: center;
       color: #555;
+    }
+    .service-detail {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .service-detail h3 {
+      font-size: 1.7rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .service-detail p {
+      font-size: 1.05rem;
+      color: #444;
+      line-height: 1.6;
+      text-align: center;
     }
     @keyframes pulseText {
       0% { opacity: 1; transform: scale(1); }
@@ -136,9 +167,8 @@
 
   <nav>
     <a href="#about">About</a>
-    <a href="#work">Work</a>
-    <a href="#projects">Projects</a>
     <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -149,30 +179,14 @@
     </p>
   </section>
 
-  <section id="projects">
-    <h2>Corporate Video</h2>
-
-    <div class="project-block">
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/yYeMGBXcr18" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <h3>Corporate Cinematic Video</h3>
-      <p>Clean, corporate, and story-driven. Shot with precise lighting and intentional pacing.</p>
-    </div>
-
-    <div class="project-block">
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/JNVpNneuZlQ" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <h3>Modern Brand Communication</h3>
-      <p>Storytelling that aligns with brand identity and visual appeal.</p>
-    </div>
-
-  </section>
-
   <section id="services">
     <h2>What We Do</h2>
     <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-building"></i>
+        <h3>Corporate Video</h3>
+        <p>Cinematic visuals for company profiles, leadership, and brand culture.</p>
+      </div>
       <div class="service-card">
         <i class="fas fa-camera"></i>
         <h3>Photography</h3>
@@ -204,10 +218,48 @@
         <p>High-quality product photography and stylized setups.</p>
       </div>
       <div class="service-card">
-        <i class="fas fa-building"></i>
+        <i class="fas fa-city"></i>
         <h3>Real Estate</h3>
         <p>Professional visuals to showcase property features and value.</p>
       </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="service-detail">
+      <h3>Corporate Video</h3>
+      <p>We create cinematic corporate videos that communicate your brand message with clarity, class, and creativity. Whether you're launching a new service, introducing your team, or explaining a process, we tailor each production to reflect your unique identity and goals. From concept development to post-production, we handle it all with professional precision.</p>
+    </div>
+
+    <div class="project-block">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/yYeMGBXcr18" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <h3>Corporate Cinematic Video</h3>
+      <p>Clean, corporate, and story-driven. Shot with precise lighting and intentional pacing.</p>
+    </div>
+
+    <div class="project-block">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/JNVpNneuZlQ" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <h3>Modern Brand Communication</h3>
+      <p>Storytelling that aligns with brand identity and visual appeal.</p>
+    </div>
+
+    <div class="service-detail">
+      <h3>Photography</h3>
+      <p>Photography captures the essence of a moment. Our services include portraits, lifestyle imagery, editorial shoots, and branding visuals that are polished, impactful, and timeless.</p>
+    </div>
+
+    <div class="project-block">
+      <div class="image-row">
+        <img src="https://i.postimg.cc/zDqXy1hc/photo1.jpg" alt="Photography Sample 1">
+        <img src="https://i.postimg.cc/6qCy7TYM/photo2.jpg" alt="Photography Sample 2">
+        <img src="https://i.postimg.cc/SxJXmmbg/photo3.jpg" alt="Photography Sample 3">
+      </div>
+      <h3>Selected Photography</h3>
+      <p>A collection of curated moments that highlight emotion, composition, and aesthetic value.</p>
     </div>
   </section>
 
