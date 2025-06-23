@@ -330,6 +330,52 @@
   </div>
 </section>
 
+<section id="clients" style="background: #fff; padding: 3rem 1rem;">
+  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">Clients We've Worked With</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+    <div class="client-logo"><img src="https://i.postimg.cc/bwyf6DGf/855e8061-4e53-4bfb-a8bb-92ce019e83d9-rw-600.png" alt="Savola Logo"></div>
+    <div class="client-logo"><img src="https://i.postimg.cc/VsCGXfk9/ba0851ce-5e24-4604-a4f7-3f68de00b222-rw-1200.png" alt="Kabrita Logo"></div>
+    <div class="client-logo"><img src="https://i.postimg.cc/D0nx2s32/63b49fd5-e6be-4b20-a66a-54cfb45afed2-rw-1920.png" alt="La Roche-Posay Logo"></div>
+    <div class="client-logo"><img src="https://i.postimg.cc/QxRW1DV7/42c12ff8-fa48-4449-b328-68dc70dc4e60-rw-1200.png" alt="My Clinic Logo"></div>
+  </div>
+</section>
+
+<style>
+  .client-logo {
+    flex: 0 1 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s forwards;
+  }
+
+  .client-logo img {
+    width: 100%;
+    max-width: 120px;
+    transition: transform 0.3s ease;
+    filter: grayscale(100%);
+  }
+
+  .client-logo img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Optional: stagger animation on scroll */
+  .client-logo:nth-child(1) { animation-delay: 0.1s; }
+  .client-logo:nth-child(2) { animation-delay: 0.2s; }
+  .client-logo:nth-child(3) { animation-delay: 0.3s; }
+  .client-logo:nth-child(4) { animation-delay: 0.4s; }
+</style>
 
   </section>
 
