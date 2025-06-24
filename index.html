@@ -198,6 +198,45 @@
     transform: translateY(0);
   }
 }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.service-card {
+  background-color: #111;
+  padding: 30px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  animation: fadeInUp 1s ease;
+}
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+.service-card h3 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.service-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
 
 }
 
@@ -224,51 +263,44 @@
   <p>Creative Legacy is a Saudi-based cinematic studio that specializes in storytelling through film, photography, and branded content. We work with brands that want to leave a visual legacy.</p>
 </section>
 
-<section class="services-section" id="services">
-  <h2 class="services-title">What We Do</h2>
+<section id="what-we-do" style="padding: 80px 0; background-color: #000; color: #fff; text-align: center;">
+  <h2 style="font-size: 2.8rem; margin-bottom: 40px; color: gold; animation: fadeInDown 1s ease-out;">What We Do</h2>
   <div class="services-grid">
-    <div class="service-box">
-      <div class="service-icon"><i class="fas fa-video"></i></div>
+    <div class="service-card">
       <h3>Corporate Videos</h3>
       <p>Professionally crafted videos that represent your brand story.</p>
     </div>
-    <div class="service-box">
-      <div class="service-icon"><i class="fas fa-camera"></i></div>
+    <div class="service-card">
       <h3>Photography</h3>
       <p>Timeless photography capturing emotion and detail.</p>
     </div>
-    <div class="service-box">
-      <div class="service-icon"><i class="fas fa-microphone"></i></div>
+    <div class="service-card">
       <h3>Interviews</h3>
       <p>Cinematic interview setups with clear audio and visual style.</p>
     </div>
-    <div class="service-box">
-      <div class="service-icon"><i class="fas fa-utensils"></i></div>
+    <div class="service-card">
+      <h3>Event Coverage</h3>
+      <p>Capturing the energy and emotion of your live events.</p>
+    </div>
+    <div class="service-card">
       <h3>Restaurant Commercials</h3>
       <p>Highlighting the flavor and ambiance of your restaurant.</p>
     </div>
-    <div class="service-box">
-      <div class="service-icon"><i class="fas fa-film"></i></div>
+    <div class="service-card">
       <h3>Documentaries & Short Films</h3>
       <p>Creative cinematic storytelling for impactful messages.</p>
     </div>
-    <div class="service-box">
-      <div class="service-icon"><i class="fas fa-box"></i></div>
+    <div class="service-card">
       <h3>Product Videos</h3>
       <p>Visually strong product presentations to attract customers.</p>
     </div>
-    <div class="service-box">
-      <div class="service-icon"><i class="fas fa-city"></i></div>
-      <h3>Real Estate</h3>
-      <p>Videos and photos that showcase property highlights.</p>
-    </div>
-    <div class="service-box">
-      <div class="service-icon"><i class="fas fa-users"></i></div>
-      <h3>Event Coverage</h3>
-      <p>Cinematic coverage of your events with dynamic editing.</p>
+    <div class="service-card">
+      <h3>Branded Content</h3>
+      <p>Original, story-driven content made to connect with your audience.</p>
     </div>
   </div>
 </section>
+
 
 <section class="clients">
   <h2>Our Clients</h2>
