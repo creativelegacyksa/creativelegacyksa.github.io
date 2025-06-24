@@ -110,9 +110,108 @@
     transform: translateY(0);
   }
 }
+.services-section {
+  padding: 60px 20px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.services-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.service-box {
+  background-color: #111;
+  border-radius: 15px;
+  padding: 30px 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: slideUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+.service-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.service-icon {
+  font-size: 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.service-box h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.service-box p {
+  color: #bbb;
+  font-size: 0.95rem;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+.video-container {
+  display: none;
+  margin-top: 20px;
+  animation: fadeInVideos 0.6s ease-in-out forwards;
+}
+.video-container iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  margin: 10px auto;
+  display: block;
+  border: none;
+}
+.service-box.active .video-container {
+  display: block;
+}
+
+@keyframes fadeInVideos {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+}
 
   </style>
 </head>
+<script>
+  const services = document.querySelectorAll('.service-box');
+
+  services.forEach(service => {
+    service.addEventListener('click', () => {
+      service.classList.toggle('active');
+    });
+  });
+</script>
 <body>
 <header>
   <img src="https://i.postimg.cc/G2Byf3y4/CL-logo-trans.png" alt="Creative Legacy Logo">
@@ -125,33 +224,49 @@
   <p>Creative Legacy is a Saudi-based cinematic studio that specializes in storytelling through film, photography, and branded content. We work with brands that want to leave a visual legacy.</p>
 </section>
 
-<section id="whatwedo">
-  <h2>What We Do</h2>
-  <nav>
-    <button onclick="showVideos('corporate')">Corporate Videos</button>
-    <button onclick="showVideos('interviews')">Interviews</button>
-    <button onclick="showVideos('events')">Event Coverage</button>
-    <button onclick="showVideos('films')">Documentaries & Short Films</button>
-    <button onclick="showVideos('product')">Product Videos</button>
-    <button onclick="showVideos('restaurant')">Restaurant Commercials</button>
-  </nav>
-  <div id="corporate" class="video-container active">
-    <iframe src="https://www.youtube.com/embed/XYv1JN-3VM8" allowfullscreen></iframe>
-  </div>
-  <div id="interviews" class="video-container">
-    <iframe src="https://www.youtube.com/embed/G27k1wJzGVM" allowfullscreen></iframe>
-  </div>
-  <div id="events" class="video-container">
-    <iframe src="https://www.youtube.com/embed/vnLIjv7uq1Q" allowfullscreen></iframe>
-  </div>
-  <div id="films" class="video-container">
-    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
-  </div>
-  <div id="product" class="video-container">
-    <iframe src="https://www.youtube.com/embed/w3jLJU7DT5E" allowfullscreen></iframe>
-  </div>
-  <div id="restaurant" class="video-container">
-    <iframe src="https://www.youtube.com/embed/TLk1Uf7WbUo" allowfullscreen></iframe>
+<section class="services-section" id="services">
+  <h2 class="services-title">What We Do</h2>
+  <div class="services-grid">
+    <div class="service-box">
+      <div class="service-icon"><i class="fas fa-video"></i></div>
+      <h3>Corporate Videos</h3>
+      <p>Professionally crafted videos that represent your brand story.</p>
+    </div>
+    <div class="service-box">
+      <div class="service-icon"><i class="fas fa-camera"></i></div>
+      <h3>Photography</h3>
+      <p>Timeless photography capturing emotion and detail.</p>
+    </div>
+    <div class="service-box">
+      <div class="service-icon"><i class="fas fa-microphone"></i></div>
+      <h3>Interviews</h3>
+      <p>Cinematic interview setups with clear audio and visual style.</p>
+    </div>
+    <div class="service-box">
+      <div class="service-icon"><i class="fas fa-utensils"></i></div>
+      <h3>Restaurant Commercials</h3>
+      <p>Highlighting the flavor and ambiance of your restaurant.</p>
+    </div>
+    <div class="service-box">
+      <div class="service-icon"><i class="fas fa-film"></i></div>
+      <h3>Documentaries & Short Films</h3>
+      <p>Creative cinematic storytelling for impactful messages.</p>
+    </div>
+    <div class="service-box">
+      <div class="service-icon"><i class="fas fa-box"></i></div>
+      <h3>Product Videos</h3>
+      <p>Visually strong product presentations to attract customers.</p>
+    </div>
+    <div class="service-box">
+      <div class="service-icon"><i class="fas fa-city"></i></div>
+      <h3>Real Estate</h3>
+      <p>Videos and photos that showcase property highlights.</p>
+    </div>
+    <div class="service-box">
+      <div class="service-icon"><i class="fas fa-users"></i></div>
+      <h3>Event Coverage</h3>
+      <p>Cinematic coverage of your events with dynamic editing.</p>
+    </div>
   </div>
 </section>
 
