@@ -91,13 +91,33 @@
       width: 120px;
       margin: 0.5rem;
     }
+.tagline {
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  margin-top: 1rem;
+  animation: fadeInUp 2s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
   </style>
 </head>
 <body>
 <header>
   <img src="https://i.postimg.cc/G2Byf3y4/CL-logo-trans.png" alt="Creative Legacy Logo">
-  <h1>Creative Legacy</h1>
-  <p>Professional Cinematic Production</p>
+ <h1 class="tagline">Cinematic visuals. Lasting impact.</h1>
+
 </header>
 
 <section id="about">
