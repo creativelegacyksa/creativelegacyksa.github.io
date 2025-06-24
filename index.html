@@ -1,213 +1,149 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Creative Legacy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body {
-      font-family: 'Montserrat', sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
       background-color: #000;
       color: #fff;
     }
     header {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2rem;
     }
-    header img {
-      width: 300px;
-      animation: fadeIn 2s ease-in-out;
-    }
-    header p {
-      font-size: 1.5rem;
-      font-weight: 600;
-      animation: pulseText 3s infinite;
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
     }
     nav {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      background-color: #111;
+      flex-wrap: wrap;
+      gap: 1rem;
       padding: 1rem;
+      background-color: #111;
     }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
+    nav button {
+      background-color: #222;
+      border: none;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 5px;
+      transition: background 0.3s;
     }
-    h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin: 2rem 0 1rem;
-      animation: fadeUp 1s ease-in-out;
+    nav button:hover {
+      background-color: #333;
     }
-    section {
+    .tab-content {
+      display: none;
       padding: 2rem;
     }
-    #about p {
-      text-align: center;
-      max-width: 800px;
-      margin: auto;
-      color: #ccc;
-      animation: fadeUp 1s ease-in-out;
+    .tab-content.active {
+      display: block;
     }
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+    .video {
+      margin-bottom: 1.5rem;
     }
-    .service-card {
-      background-color: #111;
-      border: 1px solid #333;
-      border-radius: 12px;
-      padding: 1.5rem;
-      text-align: center;
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-      transform: translateY(40px);
-      opacity: 0;
-      animation: slideFadeIn 0.6s ease forwards;
+    .video iframe {
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      border: none;
     }
-    .service-card:nth-child(1) { animation-delay: 0.1s; }
-    .service-card:nth-child(2) { animation-delay: 0.2s; }
-    .service-card:nth-child(3) { animation-delay: 0.3s; }
-    .service-card:nth-child(4) { animation-delay: 0.4s; }
-    .service-card:nth-child(5) { animation-delay: 0.5s; }
-    .service-card:nth-child(6) { animation-delay: 0.6s; }
-    .service-card:nth-child(7) { animation-delay: 0.7s; }
-    .service-card:nth-child(8) { animation-delay: 0.8s; }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-    }
-    .service-card i {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      color: #fff;
-    }
-    .service-card h3 {
+    .video-title {
+      font-weight: bold;
       margin: 0.5rem 0;
-      font-size: 1.2rem;
-      color: #fff;
     }
-    .service-card p {
-      font-size: 0.95rem;
-      color: #ccc;
-    }
-    @keyframes slideFadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes pulseText {
-      0% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.6; transform: scale(1.05); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-.animate-heading {
-  animation: fadeInUp 1s ease forwards;
-  opacity: 0;
-}
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1s ease forwards;
-}
-
-.service-card:nth-child(1) { animation-delay: 0.2s; }
-.service-card:nth-child(2) { animation-delay: 0.3s; }
-.service-card:nth-child(3) { animation-delay: 0.4s; }
-.service-card:nth-child(4) { animation-delay: 0.5s; }
-.service-card:nth-child(5) { animation-delay: 0.6s; }
-.service-card:nth-child(6) { animation-delay: 0.7s; }
-.service-card:nth-child(7) { animation-delay: 0.8s; }
-.service-card:nth-child(8) { animation-delay: 0.9s; }
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
   </style>
+  <script>
+    function showTab(id) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 </head>
 <body>
-<header>
-  <img src="https://i.postimg.cc/G2Byf3y4/CL-logo-trans.png" alt="Creative Legacy Logo">
-  <p>Cinematic visuals. Lasting impact.</p>
-</header>
-<nav>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</nav>
-<section id="about">
-  <h2>About Us</h2>
-  <p>Creative Legacy is a Saudi-based cinematic visual production company dedicated to bringing powerful stories to life. We specialize in crafting visually compelling narratives through photography, videography, and short films.</p>
-</section>
-<section id="services">
-  <h2 class="animate-heading">What We Do</h2>
-  <div class="service-grid">
-    <div class="service-card fade-in">
-      <i class="fas fa-video"></i>
-      <h3>Corporate Videos</h3>
-      <p>Professionally crafted videos tailored to represent your brand and story.</p>
-    </div>
-    <div class="service-card fade-in">
-      <i class="fas fa-camera"></i>
-      <h3>Photography</h3>
-      <p>High-quality photography that captures timeless moments and emotions.</p>
-    </div>
-    <div class="service-card fade-in">
-      <i class="fas fa-microphone"></i>
-      <h3>Interviews</h3>
-      <p>Cinematic interview setups with clear audio and emotional storytelling.</p>
-    </div>
-    <div class="service-card fade-in">
-      <i class="fas fa-utensils"></i>
-      <h3>Restaurant Commercials</h3>
-      <p>Visually rich commercials that highlight food and atmosphere.</p>
-    </div>
-    <div class="service-card fade-in">
-      <i class="fas fa-film"></i>
-      <h3>Documentaries & Short Films</h3>
-      <p>Creative narratives and emotional storytelling in cinematic form.</p>
-    </div>
-    <div class="service-card fade-in">
-      <i class="fas fa-box"></i>
-      <h3>Product Videos</h3>
-      <p>Showcasing your product’s features and quality through crisp visuals.</p>
-    </div>
-    <div class="service-card fade-in">
-      <i class="fas fa-city"></i>
-      <h3>Real Estate</h3>
-      <p>Property videos and photos that highlight architecture and value.</p>
-    </div>
-    <div class="service-card fade-in">
-      <i class="fas fa-users"></i>
-      <h3>Event Coverage</h3>
-      <p>Capturing live events with cinematic style and smooth transitions.</p>
-    </div>
-  </div>
-</section>
+  <header>
+    <h1>Creative Legacy</h1>
+    <p>Professional Cinematic Production</p>
+  </header>
+  <nav>
+    <button onclick="showTab('corporate')">Corporate Videos</button>
+    <button onclick="showTab('interviews')">Interviews</button>
+    <button onclick="showTab('events')">Event Coverage</button>
+    <button onclick="showTab('documentaries')">Documentaries & Short Films</button>
+    <button onclick="showTab('products')">Product Videos</button>
+    <button onclick="showTab('restaurant')">Restaurant Commercials</button>
+  </nav>
 
+  <section id="corporate" class="tab-content active">
+    <div class="video">
+      <div class="video-title">Savola CEO Q&A</div>
+      <iframe src="https://www.youtube.com/embed/ZMqslvoOPyU" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section id="interviews" class="tab-content">
+    <div class="video">
+      <div class="video-title">Savola CEO Q&A</div>
+      <iframe src="https://www.youtube.com/embed/ZMqslvoOPyU" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section id="events" class="tab-content">
+    <div class="video">
+      <div class="video-title">Cerave event video</div>
+      <iframe src="https://www.youtube.com/embed/wbfNraOaLjQ" allowfullscreen></iframe>
+    </div>
+    <div class="video">
+      <div class="video-title">La roche posay event</div>
+      <iframe src="https://www.youtube.com/embed/Gu3kLZw0NSo" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section id="documentaries" class="tab-content">
+    <div class="video">
+      <div class="video-title">Why JPGS , THE FULL STORY</div>
+      <iframe src="https://www.youtube.com/embed/Dqy7NFxFcrw" allowfullscreen></iframe>
+    </div>
+    <div class="video">
+      <div class="video-title">Full interview VIBE OFFICE</div>
+      <iframe src="https://www.youtube.com/embed/pogpkfNsVWw" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section id="products" class="tab-content">
+    <div class="video">
+      <div class="video-title">Viola Commercial Video</div>
+      <iframe src="https://www.youtube.com/embed/38uatnyplUA" allowfullscreen></iframe>
+    </div>
+    <div class="video">
+      <div class="video-title">Beauty Cream</div>
+      <iframe src="https://www.youtube.com/embed/EvfsYs4xLBE" allowfullscreen></iframe>
+    </div>
+    <div class="video">
+      <div class="video-title">instant white Cream Viola</div>
+      <iframe src="https://www.youtube.com/embed/BGGdxvJaTnc" allowfullscreen></iframe>
+    </div>
+    <div class="video">
+      <div class="video-title">Shampoo Viola</div>
+      <iframe src="https://www.youtube.com/embed/jvAqfz1EvXQ" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section id="restaurant" class="tab-content">
+    <div class="video">
+      <div class="video-title">Reel video for Mrgurkan Restaurant</div>
+      <iframe src="https://www.youtube.com/embed/tqrxgp2t1rc" allowfullscreen></iframe>
+    </div>
+  </section>
 </body>
 </html>
