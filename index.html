@@ -3,147 +3,166 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Creative Legacy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Montserrat', sans-serif;
       background-color: #000;
-      color: #fff;
+      color: white;
     }
     header {
       text-align: center;
-      padding: 2rem;
+      padding: 3rem 1rem 2rem;
+    }
+    header img {
+      width: 280px;
     }
     header h1 {
-      font-size: 2.5rem;
-      margin: 0;
+      font-size: 2rem;
+      margin-top: 1rem;
+      color: gold;
     }
     nav {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 1rem;
-      padding: 1rem;
       background-color: #111;
+      padding: 1rem;
     }
     nav button {
       background-color: #222;
       border: none;
-      color: #fff;
       padding: 0.75rem 1.5rem;
+      color: white;
       cursor: pointer;
-      font-size: 1rem;
-      border-radius: 5px;
-      transition: background 0.3s;
+      border-radius: 6px;
+      transition: background 0.3s ease;
     }
     nav button:hover {
-      background-color: #333;
+      background-color: gold;
+      color: black;
     }
-    .tab-content {
-      display: none;
+    section {
       padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
     }
-    .tab-content.active {
-      display: block;
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: gold;
     }
-    .video {
-      margin-bottom: 1.5rem;
+    p {
+      text-align: center;
+      color: #ccc;
     }
-    .video iframe {
+    .video-container {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .video-container.active {
+      display: flex;
+    }
+    iframe {
       width: 100%;
-      max-width: 560px;
-      height: 315px;
+      max-width: 480px;
+      height: 270px;
       border: none;
+      border-radius: 8px;
     }
-    .video-title {
-      font-weight: bold;
-      margin: 0.5rem 0;
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #111;
+    }
+    .testimonials, .clients {
+      text-align: center;
+    }
+    .clients img {
+      width: 120px;
+      margin: 0.5rem;
     }
   </style>
-  <script>
-    function showTab(id) {
-      const tabs = document.querySelectorAll('.tab-content');
-      tabs.forEach(tab => tab.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
-  </script>
 </head>
 <body>
-  <header>
-    <h1>Creative Legacy</h1>
-    <p>Professional Cinematic Production</p>
-  </header>
+<header>
+  <img src="https://i.postimg.cc/G2Byf3y4/CL-logo-trans.png" alt="Creative Legacy Logo">
+  <h1>Creative Legacy</h1>
+  <p>Professional Cinematic Production</p>
+</header>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>Creative Legacy is a Saudi-based cinematic studio that specializes in storytelling through film, photography, and branded content. We work with brands that want to leave a visual legacy.</p>
+</section>
+
+<section id="whatwedo">
+  <h2>What We Do</h2>
   <nav>
-    <button onclick="showTab('corporate')">Corporate Videos</button>
-    <button onclick="showTab('interviews')">Interviews</button>
-    <button onclick="showTab('events')">Event Coverage</button>
-    <button onclick="showTab('documentaries')">Documentaries & Short Films</button>
-    <button onclick="showTab('products')">Product Videos</button>
-    <button onclick="showTab('restaurant')">Restaurant Commercials</button>
+    <button onclick="showVideos('corporate')">Corporate Videos</button>
+    <button onclick="showVideos('interviews')">Interviews</button>
+    <button onclick="showVideos('events')">Event Coverage</button>
+    <button onclick="showVideos('films')">Documentaries & Short Films</button>
+    <button onclick="showVideos('product')">Product Videos</button>
+    <button onclick="showVideos('restaurant')">Restaurant Commercials</button>
   </nav>
+  <div id="corporate" class="video-container active">
+    <iframe src="https://www.youtube.com/embed/XYv1JN-3VM8" allowfullscreen></iframe>
+  </div>
+  <div id="interviews" class="video-container">
+    <iframe src="https://www.youtube.com/embed/G27k1wJzGVM" allowfullscreen></iframe>
+  </div>
+  <div id="events" class="video-container">
+    <iframe src="https://www.youtube.com/embed/vnLIjv7uq1Q" allowfullscreen></iframe>
+  </div>
+  <div id="films" class="video-container">
+    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+  </div>
+  <div id="product" class="video-container">
+    <iframe src="https://www.youtube.com/embed/w3jLJU7DT5E" allowfullscreen></iframe>
+  </div>
+  <div id="restaurant" class="video-container">
+    <iframe src="https://www.youtube.com/embed/TLk1Uf7WbUo" allowfullscreen></iframe>
+  </div>
+</section>
 
-  <section id="corporate" class="tab-content active">
-    <div class="video">
-      <div class="video-title">Savola CEO Q&A</div>
-      <iframe src="https://www.youtube.com/embed/ZMqslvoOPyU" allowfullscreen></iframe>
-    </div>
-  </section>
+<section class="clients">
+  <h2>Our Clients</h2>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Savola_Group_Logo.svg/2560px-Savola_Group_Logo.svg.png" alt="Savola">
+</section>
 
-  <section id="interviews" class="tab-content">
-    <div class="video">
-      <div class="video-title">Savola CEO Q&A</div>
-      <iframe src="https://www.youtube.com/embed/ZMqslvoOPyU" allowfullscreen></iframe>
-    </div>
-  </section>
+<section class="testimonials">
+  <h2>What Our Clients Say</h2>
+  <p>"Creative Legacy exceeded expectations and delivered a cinematic masterpiece!"</p>
+  <p>"Professional, passionate, and truly creative."</p>
+</section>
 
-  <section id="events" class="tab-content">
-    <div class="video">
-      <div class="video-title">Cerave event video</div>
-      <iframe src="https://www.youtube.com/embed/wbfNraOaLjQ" allowfullscreen></iframe>
-    </div>
-    <div class="video">
-      <div class="video-title">La roche posay event</div>
-      <iframe src="https://www.youtube.com/embed/Gu3kLZw0NSo" allowfullscreen></iframe>
-    </div>
-  </section>
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: creativelegacyksa@gmail.com</p>
+  <p>WhatsApp: +966-50-000-0000</p>
+  <p>Instagram: @creativelegacysa</p>
+</section>
 
-  <section id="documentaries" class="tab-content">
-    <div class="video">
-      <div class="video-title">Why JPGS , THE FULL STORY</div>
-      <iframe src="https://www.youtube.com/embed/Dqy7NFxFcrw" allowfullscreen></iframe>
-    </div>
-    <div class="video">
-      <div class="video-title">Full interview VIBE OFFICE</div>
-      <iframe src="https://www.youtube.com/embed/pogpkfNsVWw" allowfullscreen></iframe>
-    </div>
-  </section>
+<footer>
+  <p>&copy; 2025 Creative Legacy. All rights reserved.</p>
+</footer>
 
-  <section id="products" class="tab-content">
-    <div class="video">
-      <div class="video-title">Viola Commercial Video</div>
-      <iframe src="https://www.youtube.com/embed/38uatnyplUA" allowfullscreen></iframe>
-    </div>
-    <div class="video">
-      <div class="video-title">Beauty Cream</div>
-      <iframe src="https://www.youtube.com/embed/EvfsYs4xLBE" allowfullscreen></iframe>
-    </div>
-    <div class="video">
-      <div class="video-title">instant white Cream Viola</div>
-      <iframe src="https://www.youtube.com/embed/BGGdxvJaTnc" allowfullscreen></iframe>
-    </div>
-    <div class="video">
-      <div class="video-title">Shampoo Viola</div>
-      <iframe src="https://www.youtube.com/embed/jvAqfz1EvXQ" allowfullscreen></iframe>
-    </div>
-  </section>
-
-  <section id="restaurant" class="tab-content">
-    <div class="video">
-      <div class="video-title">Reel video for Mrgurkan Restaurant</div>
-      <iframe src="https://www.youtube.com/embed/tqrxgp2t1rc" allowfullscreen></iframe>
-    </div>
-  </section>
+<script>
+  function showVideos(id) {
+    const containers = document.querySelectorAll('.video-container');
+    containers.forEach(c => c.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+</script>
 </body>
 </html>
