@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,16 +10,15 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #000;
-  color: #fff;
-}
-
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+    }
     header {
       text-align: center;
-      padding: 2rem 1rem 1rem;
+      padding: 2rem 1rem;
     }
     header img {
       width: 300px;
@@ -35,7 +33,7 @@
       display: flex;
       justify-content: center;
       gap: 2rem;
-      background-color: #000;
+      background-color: #111;
       padding: 1rem;
     }
     nav a {
@@ -43,351 +41,143 @@
       text-decoration: none;
       font-weight: 600;
     }
-    section {
-      padding: 2rem;
-    }
     h2 {
       text-align: center;
       font-size: 2rem;
-      margin-bottom: 2rem;
+      margin: 2rem 0 1rem;
+      animation: fadeUp 1s ease-in-out;
     }
-    .services-grid {
+    section {
+      padding: 2rem;
+    }
+    #about p {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      color: #ccc;
+      animation: fadeUp 1s ease-in-out;
+    }
+    .service-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
-      animation: fadeInUp 1s ease-in-out;
+      margin-top: 2rem;
     }
     .service-card {
-      background-color: white;
+      background-color: #111;
+      border: 1px solid #333;
       border-radius: 12px;
       padding: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      transform: translateY(40px);
+      opacity: 0;
+      animation: slideFadeIn 0.6s ease forwards;
     }
+    .service-card:nth-child(1) { animation-delay: 0.1s; }
+    .service-card:nth-child(2) { animation-delay: 0.2s; }
+    .service-card:nth-child(3) { animation-delay: 0.3s; }
+    .service-card:nth-child(4) { animation-delay: 0.4s; }
+    .service-card:nth-child(5) { animation-delay: 0.5s; }
+    .service-card:nth-child(6) { animation-delay: 0.6s; }
+    .service-card:nth-child(7) { animation-delay: 0.7s; }
+    .service-card:nth-child(8) { animation-delay: 0.8s; }
+
     .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
     }
     .service-card i {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #000;
-      animation: bounce 2s infinite;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
     }
     .service-card h3 {
       margin: 0.5rem 0;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
+      color: #fff;
     }
     .service-card p {
       font-size: 0.95rem;
-      color: #555;
+      color: #ccc;
     }
-    .video-wrapper {
-      max-width: 600px;
-      margin: 1.5rem auto;
+    @keyframes slideFadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    .video-wrapper iframe {
-      width: 100%;
-      height: 320px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .project-block {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      max-width: 900px;
-      margin: 2rem auto;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .project-block h3 {
-      text-align: center;
-      margin-top: 1rem;
-    }
-    .project-block p {
-      text-align: center;
-      color: #555;
-    }
-    .service-detail {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .service-detail h3 {
-      font-size: 1.7rem;
-      margin-bottom: 1rem;
-    }
-    .service-detail p {
-      font-size: 1.05rem;
-      color: #444;
-      line-height: 1.6;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     @keyframes pulseText {
       0% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.6; transform: scale(1.05); }
       100% { opacity: 1; transform: scale(1); }
     }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
   </style>
 </head>
-
 <body>
-  <header>
-    <img src="https://i.postimg.cc/G2Byf3y4/CL-logo-trans.png" alt="Creative Legacy Logo">
-    <p>Cinematic visuals. Lasting impact.</p>
-  </header>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about">
-    <h2>Who We Are</h2>
-    <p style="max-width: 800px; margin: auto; text-align: center; font-size: 1.1rem; color: #444;">
-      Creative Legacy is a Saudi-based cinematic visual production company dedicated to bringing powerful stories to life. We specialize in crafting visually compelling narratives through photography, videography, and short films. Whether it's a branded shoot, a corporate documentary, or a social campaign, we turn creative visions into lasting impact.
-    </p>
-  </section>
-
-  <section id="services">
-    <h2>What We Do</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <i class="fas fa-building"></i>
-        <h3>Corporate Video</h3>
-        <p>Cinematic visuals for company profiles, leadership, and brand culture.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-camera"></i>
-        <h3>Photography</h3>
-        <p>Capturing timeless moments with precision and artistry.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-video"></i>
-        <h3>Event Coverage</h3>
-        <p>Full video & photo coverage for events, big or small.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-microphone"></i>
-        <h3>Interview Shooting</h3>
-        <p>Professional setups for cinematic interviews and testimonies.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-film"></i>
-        <h3>Documentaries & Short Films</h3>
-        <p>Deep storytelling through visual narratives.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-utensils"></i>
-        <h3>Restaurant Commercials</h3>
-        <p>Deliciously visual ads tailored for food & hospitality.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-box"></i>
-        <h3>Product Shooting</h3>
-        <p>High-quality product photography and stylized setups.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-city"></i>
-        <h3>Real Estate</h3>
-        <p>Professional visuals to showcase property features and value.</p>
-      </div>
+<header>
+  <img src="https://i.postimg.cc/G2Byf3y4/CL-logo-trans.png" alt="Creative Legacy Logo">
+  <p>Cinematic visuals. Lasting impact.</p>
+</header>
+<nav>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+<section id="about">
+  <h2>About Us</h2>
+  <p>Creative Legacy is a Saudi-based cinematic visual production company dedicated to bringing powerful stories to life. We specialize in crafting visually compelling narratives through photography, videography, and short films.</p>
+</section>
+<section id="services">
+  <h2 class="animate-heading">What We Do</h2>
+  <div class="service-grid">
+    <div class="service-card fade-in">
+      <i class="fas fa-video"></i>
+      <h3>Corporate Videos</h3>
+      <p>Professionally crafted videos tailored to represent your brand and story.</p>
     </div>
-  </section>
-
-  <section id="projects">
-    <h2>Corporate Video</h2>
-
-    <div class="project-block">
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/yYeMGBXcr18" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <h3>Corporate Cinematic Video</h3>
-      <p>Clean, corporate, and story-driven. Shot with precise lighting and intentional pacing.</p>
+    <div class="service-card fade-in">
+      <i class="fas fa-camera"></i>
+      <h3>Photography</h3>
+      <p>High-quality photography that captures timeless moments and emotions.</p>
     </div>
-
-    <div class="project-block">
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/JNVpNneuZlQ" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <h3>Modern Brand Communication</h3>
-      <p>Storytelling that aligns with brand identity and visual appeal.</p>
+    <div class="service-card fade-in">
+      <i class="fas fa-microphone"></i>
+      <h3>Interviews</h3>
+      <p>Cinematic interview setups with clear audio and emotional storytelling.</p>
     </div>
-
-
-    <h2>Event Coverage</h2>
-
-    <div class="project-block">
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/wbfNraOaLjQ" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <h3>Cerave event video</h3>
-      <p>Capturing energy and flow with dynamic coverage and elegant edits.</p>
+    <div class="service-card fade-in">
+      <i class="fas fa-utensils"></i>
+      <h3>Restaurant Commercials</h3>
+      <p>Visually rich commercials that highlight food and atmosphere.</p>
     </div>
-
-    <div class="project-block">
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/Gu3kLZw0NSo" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <h3>La roche posay event</h3>
-      <p>Multi-angle storytelling with audience engagement and atmosphere.</p>
+    <div class="service-card fade-in">
+      <i class="fas fa-film"></i>
+      <h3>Documentaries & Short Films</h3>
+      <p>Creative narratives and emotional storytelling in cinematic form.</p>
     </div>
-
-    <h2>Interview Shooting</h2>
-
-    <div class="project-block">
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/ZMqslvoOPyU" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <h3>Savola CEO Q&A</h3>
-      <p>Professional studio-style interview with clean framing and warm tones.</p>
+    <div class="service-card fade-in">
+      <i class="fas fa-box"></i>
+      <h3>Product Videos</h3>
+      <p>Showcasing your product’s features and quality through crisp visuals.</p>
     </div>
-    <h2>Documentaries & Short Films</h2>
-
-<div class="project-block">
-  <div class="video-wrapper">
-    <iframe src="https://www.youtube.com/embed/Dqy7NFxFcrw" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <h3>Why JPGS , THE FULL STORY</h3>
-  <p>A full breakdown behind JPGS and its deeper narrative.</p>
-</div>
-
-<div class="project-block">
-  <div class="video-wrapper">
-    <iframe src="https://www.youtube.com/embed/pogpkfNsVWw" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <h3>Full interview VIBE OFFICE</h3>
-  <p>Inside VIBE OFFICE’s journey and creative energy in one-on-one format.</p>
-</div>
-
-<h2>Restaurant Commercials</h2>
-
-<div class="project-block">
-  <div class="video-wrapper">
-    <iframe src="https://www.youtube.com/embed/tqrxgp2t1rc" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <h3>Reel video for Mrgurkan Restaurant</h3>
-  <p>A bold and flavorful showcase capturing the vibe and experience of Mrgurkan Restaurant.</p>
-</div>
-
-  <section>
-  <h2>Product Shooting</h2>
-
-  <div class="project-block">
-    <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/38uatnyplUA" frameborder="0" allowfullscreen></iframe>
+    <div class="service-card fade-in">
+      <i class="fas fa-city"></i>
+      <h3>Real Estate</h3>
+      <p>Property videos and photos that highlight architecture and value.</p>
     </div>
-    <h3>Viola Commercial Video</h3>
-    <p>Elegant visuals crafted for Viola’s skincare product line.</p>
-  </div>
-
-  <div class="project-block">
-    <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/EvfsYs4xLBE" frameborder="0" allowfullscreen></iframe>
+    <div class="service-card fade-in">
+      <i class="fas fa-users"></i>
+      <h3>Event Coverage</h3>
+      <p>Capturing live events with cinematic style and smooth transitions.</p>
     </div>
-    <h3>Beauty Cream</h3>
-    <p>A short and stunning showcase of luxurious skin glow results.</p>
-  </div>
-
-  <div class="project-block">
-    <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/BGGdxvJaTnc" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <h3>Instant White Cream Viola</h3>
-    <p>Fast, visual impact for Viola’s whitening cream product.</p>
-  </div>
-
-  <div class="project-block">
-    <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/jvAqfz1EvXQ" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <h3>Shampoo Viola</h3>
-    <p>Smooth, clean, and elegant presentation of Viola’s shampoo benefits.</p>
   </div>
 </section>
-
-<section>
-  <h2>Client Testimonials</h2>
-  <div class="project-block">
-    <p>"Creative Legacy brought our vision to life with cinematic precision." – Savola</p>
-    <p>"Professional, fast, and visually stunning." – MrGurkan Restaurant</p>
-  </div>
-</section>
-
-<section id="clients" style="background: #fff; padding: 3rem 1rem;">
-  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">Clients We've Worked With</h2>
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
-    <div class="client-logo"><img src="https://i.postimg.cc/bwyf6DGf/855e8061-4e53-4bfb-a8bb-92ce019e83d9-rw-600.png" alt="Savola Logo"></div>
-    <div class="client-logo"><img src="https://i.postimg.cc/VsCGXfk9/ba0851ce-5e24-4604-a4f7-3f68de00b222-rw-1200.png" alt="Kabrita Logo"></div>
-    <div class="client-logo"><img src="https://i.postimg.cc/D0nx2s32/63b49fd5-e6be-4b20-a66a-54cfb45afed2-rw-1920.png" alt="La Roche-Posay Logo"></div>
-    <div class="client-logo"><img src="https://i.postimg.cc/QxRW1DV7/42c12ff8-fa48-4449-b328-68dc70dc4e60-rw-1200.png" alt="My Clinic Logo"></div>
-  </div>
-</section>
-
-<style>
-  .client-logo {
-    flex: 0 1 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp 1s forwards;
-  }
-
-  .client-logo img {
-    width: 100%;
-    max-width: 120px;
-    transition: transform 0.3s ease;
-    filter: grayscale(100%);
-  }
-
-  .client-logo img:hover {
-    transform: scale(1.1);
-    filter: grayscale(0%);
-  }
-
-  @keyframes fadeUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Optional: stagger animation on scroll */
-  .client-logo:nth-child(1) { animation-delay: 0.1s; }
-  .client-logo:nth-child(2) { animation-delay: 0.2s; }
-  .client-logo:nth-child(3) { animation-delay: 0.3s; }
-  .client-logo:nth-child(4) { animation-delay: 0.4s; }
-</style>
-
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p style="text-align: center; font-size: 1.1rem;">Email us at <a href="mailto:creativelegacyksa@gmail.com">creativelegacyksa@gmail.com</a></p>
-    <p style="text-align: center;">
-      <a href="https://wa.me/966547888338" target="_blank" style="background: #25D366; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Message Us on WhatsApp</a>
-    </p>
-  </section>
 
 </body>
-
 </html>
